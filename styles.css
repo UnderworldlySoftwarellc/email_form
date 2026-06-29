@@ -19,7 +19,7 @@ body {
 .container {
   width: min(480px, 100%);
   background: white;
-  border-radius: 1rem;
+  border-radius: 8px;
   padding: 2rem;
   box-shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
 }
@@ -29,30 +29,71 @@ h1 {
   font-size: clamp(1.75rem, 2vw, 2.5rem);
 }
 
+.intro {
+  margin: -0.5rem 0 1.5rem;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
 form {
   display: grid;
   gap: 1rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+}
+
+.hidden {
+  display: none;
 }
 
 label {
   font-weight: 600;
 }
 
-input[type="email"] {
+input,
+select,
+textarea {
   width: 100%;
   padding: 0.9rem 1rem;
   border: 1px solid #d1d5db;
-  border-radius: 0.75rem;
+  border-radius: 8px;
   font-size: 1rem;
+  font: inherit;
+  background: #fff;
 }
 
-button {
+textarea {
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #2563eb;
+  outline: 3px solid rgba(37, 99, 235, 0.16);
+}
+
+.actions {
+  margin: 0;
+}
+
+button,
+.button-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 0.95rem 1.2rem;
   border: none;
-  border-radius: 0.75rem;
+  border-radius: 8px;
   background: #2563eb;
   color: white;
   font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
   cursor: pointer;
 }
 

@@ -1,5 +1,6 @@
 const form = document.getElementById('contact-form');
 const emailInput = document.getElementById('email');
+const reasonInput = document.getElementById('reason');
 const messageInput = document.getElementById('message');
 const statusEl = document.getElementById('status');
 
@@ -27,6 +28,13 @@ form.addEventListener('submit', (event) => {
   if (!message) {
     event.preventDefault();
     statusEl.textContent = 'Please enter a message to send.';
+    statusEl.classList.add('error');
+    return;
+  }
+
+  if (!reasonInput.value) {
+    event.preventDefault();
+    statusEl.textContent = 'Please choose a reason for contacting us.';
     statusEl.classList.add('error');
     return;
   }
