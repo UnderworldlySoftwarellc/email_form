@@ -9,6 +9,7 @@
 <body>
   <main class="container">
     <h1>Contact Us</h1>
+    <p class="intro">Send a message and it will be captured by Netlify Forms for email notification delivery.</p>
     <form
       id="contact-form"
       name="contact"
@@ -18,32 +19,36 @@
       netlify-honeypot="bot-field"
     >
       <input type="hidden" name="form-name" value="contact" />
-      <input type="hidden" name="bot-field" />
+      <p class="hidden">
+        <label>Do not fill this out: <input name="bot-field" /></label>
+      </p>
 
-      <p>
+      <p class="field">
         <label for="name">Your Name</label>
         <input type="text" id="name" name="name" required />
       </p>
 
-      <p>
+      <p class="field">
         <label for="email">Your Email</label>
         <input type="email" id="email" name="email" required />
       </p>
 
-      <p>
-        <label for="role">Your Role</label>
-        <select id="role" name="role[]" multiple>
-          <option value="leader">Leader</option>
-          <option value="follower">Follower</option>
+      <p class="field">
+        <label for="reason">Reason for Contact</label>
+        <select id="reason" name="reason" required>
+          <option value="">Choose a reason</option>
+          <option value="general">General question</option>
+          <option value="support">Support request</option>
+          <option value="partnership">Partnership</option>
         </select>
       </p>
 
-      <p>
+      <p class="field">
         <label for="message">Message</label>
         <textarea id="message" name="message" rows="5" required></textarea>
       </p>
 
-      <p>
+      <p class="actions">
         <button type="submit">Send</button>
       </p>
 
